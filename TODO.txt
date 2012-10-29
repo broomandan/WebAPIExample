@@ -1,0 +1,19 @@
+TODO:
+Algorithm				12Hrs
+	Requirement analysis, create story
+	Setup project		
+	Validation rules
+	TDD Algorithm	
+	Harness app or integ test to test all combinations(run application for all combinations)	
+
+Webapi controller
+	Setup project
+	routing	
+	Exception, AOP
+	input Validation
+	--------------		6Hrs
+	IOC
+	Mock
+	caching
+
+Client App:
