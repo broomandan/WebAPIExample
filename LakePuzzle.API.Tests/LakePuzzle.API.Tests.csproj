@@ -111,7 +111,7 @@
       <Project>{0ABDDF03-7831-45D2-941F-C122F2B8319F}</Project>
       <Name>LakePuzzle.API</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LakePuzzle\LakePuzzle.Business.csproj">
+    <ProjectReference Include="..\LakePuzzle.Business\LakePuzzle.Business.csproj">
       <Project>{603ECB95-C55E-48FD-AADE-990B3547F4D8}</Project>
       <Name>LakePuzzle.Business</Name>
     </ProjectReference>
