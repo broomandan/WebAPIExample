@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LakePuzzle.Business.test", "LakePuzzle.test\LakePuzzle.Business.test.csproj", "{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9FFC4D6C-2C98-4818-8608-FD8C542F781C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{2CCFD4C7-7B54-4074-A818-B89ACA0E6A99}"
@@ -17,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LakePuzzle.API.Tests", "Lak
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LakePuzzle.Business", "LakePuzzle.Business\LakePuzzle.Business.csproj", "{603ECB95-C55E-48FD-AADE-990B3547F4D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LakePuzzle.Business.Tests", "LakePuzzle.Business.Tests\LakePuzzle.Business.Tests.csproj", "{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,16 +27,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Release|Any CPU.Build.0 = Release|Any CPU
-		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Release|x86.ActiveCfg = Release|Any CPU
 		{0ABDDF03-7831-45D2-941F-C122F2B8319F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0ABDDF03-7831-45D2-941F-C122F2B8319F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ABDDF03-7831-45D2-941F-C122F2B8319F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -67,6 +57,16 @@ Global
 		{603ECB95-C55E-48FD-AADE-990B3547F4D8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{603ECB95-C55E-48FD-AADE-990B3547F4D8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{603ECB95-C55E-48FD-AADE-990B3547F4D8}.Release|x86.ActiveCfg = Release|Any CPU
+		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{60B99B25-6AE1-4B08-BE50-06BB03D6BF52}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
