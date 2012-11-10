@@ -1,10 +1,10 @@
-Story: Lake puzzle solver
+## Story: Lake puzzle solver
 
 As a lake puzzle app user, I should be able to 
 provide 3 numbers representing two bucket sizes and a goal volume of water to be set aside from lake
 so that I am notified of shortest sequence of achieving the goal volume
 
-Assumptions: 
+## Assumptions: 
 
 1- Bucket sizes are integers between 1 to 100
 2- Goal amount (X) should be less than largest bucket size
@@ -14,7 +14,7 @@ Validation Rules:
 2- Goal amount (X) should be less than largest bucket size
 3- Buckets cannot be the same size
 
-Troubleshooting Building the solution
+## Troubleshooting Building the solution
 
 If you are having difficulty building the solution try installing MVC optimization packge from NuGet console
 
