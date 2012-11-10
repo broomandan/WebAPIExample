@@ -81,18 +81,19 @@ namespace LakePuzzle.Business.test
         }
 
         [TestMethod()]
-        [ExpectedException(typeof(LakePuzzleException))]
-        public void ShouldThrowExceptionWhenCallingSolveWithSameSizeBuckets()
+        public void ShouldReturnNoResultWhenCallingSolveWithEvenBucketSizesAndOddGoal()
         {
             //Arrange
-            var sourceBucket = Mother.GetTargetBucket();
-            var targetBucket = Mother.GetTargetBucket();
-            uint goal = 4;
+            var sourceBucket = Mother.GetEvenCapacitySourceBucket();
+            var targetBucket = Mother.GetEvenCapacityTargetBucket();
+            uint goal = 5;
 
             // Act
             var actual = sut.Solve(sourceBucket, targetBucket, goal);
+            Assert.AreEqual(actual.Length, 0);
 
         }
+
         [TestMethod()]
         public void ShouldReturnNoResult()
         {
@@ -108,10 +109,31 @@ namespace LakePuzzle.Business.test
             //Assert
             Assert.AreEqual(expectedLength, actual.Length);
         }
+        [TestMethod()]
 
-        [TestMethod(),Ignore]
+        public void ShouldReturnNoResultWhenCallingSolveWithSameSizeBuckets()
+        {
+
+            //Arrange
+
+            var sourceBucket = Mother.GetTargetBucket();
+            var targetBucket = Mother.GetTargetBucket();
+            uint goal = 4;
+
+
+            // Act
+
+            var actual = sut.Solve(sourceBucket, targetBucket, goal);
+
+            Assert.AreEqual(actual.Length, 0);
+
+        }
+
+
+        [TestMethod(), Ignore]
         public void Harness()
         {
+            var resultCounter = 0;
             for (uint i = 1; i < 100; i++)
             {
                 for (uint j = i + 1; j < 100; j++)
@@ -121,23 +143,18 @@ namespace LakePuzzle.Business.test
                         var actual = sut.Solve(Factory.CreateBucket(i), Factory.CreateBucket(j), goal);
                         if (actual.Length > 0)
                         {
-                            Debug.WriteLine(string.Format("Source {0}\t\ttarget {1}\t\tgoal {2}", i, j,goal));
-                          //  actual.printLog();
+                            var sourceEven = i % 2 == 0;
+                            var targetEven = j % 2 == 0;
+                            var goalEven = goal % 2 == 0;
+
+                            if (sourceEven && targetEven && !goalEven)
+                                //Debug.WriteLine(string.Format("Source {0}\t\ttarget {1}\t\tgoal {2}", i, j, goal));
+                                resultCounter++;
                         }
                     }
                 }
             }
-            ////Arrange
-            //var sourceBucket = Factory.CreateBucket(95);
-            //var targetBucket = Factory.CreateBucket(57);
-            //uint goal = 37;
-            //var expectedLength = 2;
-
-            //// Act
-            //var actual = sut.Solve(sourceBucket, targetBucket, goal);
-
-            ////Assert
-            //Assert.AreEqual(expectedLength, actual.Length);
+            Debug.WriteLine(string.Format("finished, resultCounter:{0}", resultCounter));
         }
     }
 }

@@ -7,10 +7,28 @@
   <link rel="stylesheet" href="css/bootstrap.css">
   <script src="lib/angular/angular.js"></script>
   <script src="js/controllers.js"></script>
+  <STYLE TYPE="text/css">
+  .puzzle-result-header {
+   
+  }
+  .puzzle-result-header span{
+     margin-right:30px;
+  }
+  .puzzle-result-step {
+
+  }
+  .puzzle-result-step  span{
+    margin-left:25px;
+    margin-right:25px;
+    width:5px;
+
+  }  
+
+  </STYLE>
 </head>
 <body ng-controller="PuzzleResultCtrl">
   <div style="text-align:center">
-    <div style="width:300px;margin-left:50px">
+    <div style="width:100%">
       <form name="myForm" >
         <div>
           <br>
@@ -28,15 +46,15 @@
       </form>
     </div>
     <hr/>
-    <div class="span10">
+    <div >
      <dl>
-      <dt> 
-        <span style="margin-right:100px;margin-left:15px">SourceBucket</span><span style="margin-right:100px;margin-left:15px">TargetBucket</span><br>
-        <span style="margin-right:80px">Operation ---- State</span><span style="margin-right:80px">Operation ---- State</span>
+      <dt class="puzzle-result-header" > 
+        <span >SourceBucket</span><span >TargetBucket</span><br>
+        <span style="margin-left:50px">Operation ---- State</span><span style="margin-left:10px">Operation ---- State</span>
       </dt>
-      <dd ng-repeat="resultStep in puzzleResultSteps">
-        <span style="margin-left:20px;margin-right:50px">{{resultStep.SourceBucketOperation}}</span><span style="width:5px;margin-right:100px;">{{resultStep.SourceBucketState}}</span>
-        <span style="margin-left:20px;margin-right:50px">{{resultStep.TargetBucketOperation}}</span><span style="width:5px;margin-right:100px;">{{resultStep.TargetBucketState}}</span>
+      <dd ng-repeat="resultStep in puzzleResultSteps" class="puzzle-result-step">
+        <span >{{resultStep.SourceBucketOperation}}</span><span >{{resultStep.SourceBucketState}}</span>
+        <span >{{resultStep.TargetBucketOperation}}</span><span >{{resultStep.TargetBucketState}}</span>
       </dd>
     </dl>  
   </div>    

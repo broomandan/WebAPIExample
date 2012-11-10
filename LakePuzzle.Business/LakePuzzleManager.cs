@@ -3,7 +3,6 @@ namespace LakePuzzle.Business
 {
     public class LakePuzzleManager
     {
-
         public PuzzleResult GetShortestSolution(Bucket sourceBucket, Bucket targetBucket, uint goal)
         {
             ValidateInput(sourceBucket, targetBucket, goal);
@@ -17,10 +16,14 @@ namespace LakePuzzle.Business
 
         public PuzzleResult Solve(Bucket sourceBucket, Bucket targetBucket, uint goal)
         {
-            ValidateInput(sourceBucket, targetBucket, goal);
-
             var result = Factory.CreatePuzzleResult();
 
+            ValidateInput(sourceBucket, targetBucket, goal);
+
+            //if (!HasSolution(sourceBucket, targetBucket, goal))
+            //{
+            //    return result;
+            //}
             sourceBucket.Empty();
 
             targetBucket.Empty();
@@ -32,7 +35,7 @@ namespace LakePuzzle.Business
                 if (sourceBucket.IsEmpty())
                 {
                     sourceBucket.Fill();
-                    result.AddStep(Factory.CreatePuzzleSolutionStep("F", sourceBucket.CurrentVolume, " ", targetBucket.CurrentVolume));
+                    result.AddStep(Factory.CreatePuzzleSolutionStep("F", sourceBucket.CurrentVolume, "N", targetBucket.CurrentVolume));
                 }
                 else if (targetBucket.IsFull())
                 {
@@ -42,7 +45,7 @@ namespace LakePuzzle.Business
                         break;
                     }
                     targetBucket.Empty();
-                    result.AddStep(Factory.CreatePuzzleSolutionStep(" ", sourceBucket.CurrentVolume, "E", targetBucket.CurrentVolume));
+                    result.AddStep(Factory.CreatePuzzleSolutionStep("N", sourceBucket.CurrentVolume, "E", targetBucket.CurrentVolume));
                 }
                 else
                 {
@@ -78,7 +81,26 @@ namespace LakePuzzle.Business
 
             return shortestSolution;
         }
+        private static bool HasSolution(Bucket sourceBucket, Bucket targetBucket, uint goal)
+        {
+            bool hasSolution = true;
+            // Validation rule: source bucket and target bucket cannot have the same capacity 
+            if (sourceBucket.Capacity == targetBucket.Capacity)
+            {
+                hasSolution = false;
+            }
 
+            var sourceEven = sourceBucket.Capacity % 2 == 0;
+            var targetEven = targetBucket.Capacity % 2 == 0;
+            var goalOdd = goal % 2 == 0;
+
+            // short cuircuit in case of even buycket sizes and odd goal
+            if (sourceEven && targetEven && goalOdd)
+            {
+                hasSolution = false;
+            }
+            return hasSolution;
+        }
         private static void ValidateInput(Bucket sourceBucket, Bucket targetBucket, uint goal)
         {
             var largerBucketSize = sourceBucket.Capacity > targetBucket.Capacity ? sourceBucket.Capacity : targetBucket.Capacity;
@@ -88,12 +110,7 @@ namespace LakePuzzle.Business
             {
                 throw new LakePuzzleException(string.Format("goal({0}) cannot be greater than largest bucket size({1})", goal, largerBucketSize));
             }
-            // Validation rule: source bucket and target bucket cannot have the same capacity 
-            if (sourceBucket.Capacity == targetBucket.Capacity)
-            {
-                throw new LakePuzzleException("sourceBucket and targetBucket cannot have the same capacity)");
-            }
-        }
 
+        }
     }
 }

@@ -30,5 +30,15 @@ namespace LakePuzzle.Business.test
         {
             return Factory.CreateLakePuzzleManager();
         }
+
+        internal static Bucket GetEvenCapacitySourceBucket()
+        {
+            return Factory.CreateBucket(4);
+        }
+
+        internal static Bucket GetEvenCapacityTargetBucket()
+        {
+            return Factory.CreateBucket(6);
+        }
     }
 }
