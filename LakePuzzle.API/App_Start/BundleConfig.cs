@@ -7,8 +7,9 @@ namespace LakePuzzle.API
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-1.*"));
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include("~/scripts/jquery-1.*"));
+            bundles.Add(new ScriptBundle("~/bundles/angularjs").Include("~/Scripts/angular/angular.js"));
+            bundles.Add(new ScriptBundle("~/bundles/controllers").Include("~/Scripts/Angular-js-app/app/js/controllers.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui*"));
@@ -20,7 +21,11 @@ namespace LakePuzzle.API
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                //"~/Content/site.css",
+                "~/Scripts/Angular-js-app/app/css/app.css",
+                "~/Scripts/Angular-js-app/app/css/bootstrap.css"
+                ));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
