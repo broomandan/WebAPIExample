@@ -14,6 +14,11 @@ Validation Rules:
 2- Goal amount (X) should be less than largest bucket size
 3- Buckets cannot be the same size
 
+## How to use the app
+
+Hitting F5 in Visual Studio should bring up the index page that allows you to interact with the application.
+
+
 ## Troubleshooting Building the solution
 
 If you are having difficulty building the solution try installing MVC optimization packge from NuGet console
